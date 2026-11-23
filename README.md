@@ -32,8 +32,7 @@ Cameras & Road Conditions
 > and Nova Scotia, North Carolina, Pennsylvania, and Yukon, and the
 > Iteris/ATG states South Carolina, Montana, and South Dakota (capabilities
 > vary by provider). Most require the provider's own free 511 developer API
-> key; Alberta, Ontario, and the Iteris/ATG states publish openly and need no
-> key.
+> key; Alberta and the Iteris/ATG states publish openly and need no key.
 
 ## Contributing
 
@@ -86,6 +85,7 @@ Keyed providers issue **their own** key from **their own** portal — a Wisconsi
 | Idaho | https://511.idaho.gov/developers/doc |
 | Nevada | https://www.nvroads.com/developers/doc |
 | Utah | https://www.udottraffic.utah.gov/developers/doc (throttled to 10 calls/min) |
+| Ontario | https://511on.ca/developers/doc |
 | Newfoundland & Labrador | https://nl511.ca/developers/doc |
 | Manitoba | https://www.manitoba511.ca/developers/doc |
 | New Brunswick | https://511.gnb.ca/developers/doc |
@@ -95,7 +95,7 @@ Keyed providers issue **their own** key from **their own** portal — a Wisconsi
 | Pennsylvania | https://511pa.com |
 | Yukon | https://511yukon.ca |
 
-**No key needed** (open feeds): Alberta, Ontario, South Carolina, Montana, and South Dakota.
+**No key needed** (open feeds): Alberta, South Carolina, Montana, and South Dakota.
 
 ## Entity bounds (options flow)
 
@@ -263,7 +263,7 @@ is required.
 | Nevada | ✅ | ✅ | ✅ | ✅ | | | Key |
 | Utah | ✅ | ✅ | ✅ | ✅ | | | Key |
 | Alberta | ✅ | ✅ | ✅ | ✅ | | | Open |
-| Ontario | ✅ | ✅ | ✅ | | | | Open |
+| Ontario | ✅ | ✅ | ✅ | | | | Key |
 | Newfoundland & Labrador | ✅ | ✅ | ✅ | | | | Key |
 | Manitoba | ✅ | ✅ | ✅ | | | | Key |
 | New Brunswick | ✅ | ✅ | ✅ | | | | Key |
@@ -303,8 +303,8 @@ Home Assistant Entities   ← cameras, sensors, binary_sensors, images
   Idaho, Nevada, Utah, the seven Canadian provinces, North Carolina,
   Pennsylvania, and Yukon — each a thin subclass supplying its base URL,
   capabilities, and any provider-specific resource names, API versions,
-  field aliases, or unit preferences; Alberta and Ontario omit the
-  developer key and Alberta reports metric weather), and
+  field aliases, or unit preferences; Alberta omits the developer key and
+  reports metric weather), and
   `IterisAtisProvider` covers the Iteris/ATG GeoJSON CDN (South Carolina,
   Montana, South Dakota — open layers, no key).
 - **Entities never perform API calls** — they read from `coordinator.data`.
@@ -393,7 +393,7 @@ quota.
 
 **Do I need a key for my state?**
 Only keyed providers (see the [developer key table](#getting-a-developer-api-key))
-need one. Alberta, Ontario, South Carolina, Montana, and South Dakota publish
+need one. Alberta, South Carolina, Montana, and South Dakota publish
 openly and skip the credential step entirely.
 
 ## License
